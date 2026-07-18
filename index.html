@@ -2,10 +2,204 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Moja Testowa Strona</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototyp Wilczej Machiny Oblężniczej</title>
+    <style>
+        :root {
+            --bg-dark: #060606;
+            --bg-mid: #1b1b1b;
+            --text-main: #f5efe6;
+            --text-soft: #d7d0c3;
+            --accent: #9ad0ff;
+            --accent-2: #f3f3f3;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Proxima Nova", "Segoe UI", Arial, sans-serif;
+            color: var(--text-main);
+            background:
+                linear-gradient(135deg, #0a0a0a 0%, #1b1b1b 50%, #000000 100%);
+            min-height: 100vh;
+            padding: 32px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            opacity: 0.35;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.21);
+            border-radius: 24px;
+            background: rgba(8, 8, 8, 0.78);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(6px);
+            position: relative;
+            z-index: 1;
+        }
+
+        h1, h2 {
+            margin: 0 0 14px;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            color: var(--accent-2);
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            margin-top: 24px;
+            color: var(--accent);
+        }
+
+        p, li {
+            line-height: 1.7;
+            color: var(--text-soft);
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: #d8d8d8;
+            margin-bottom: 22px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin: 24px 0;
+        }
+
+        .grid img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .details {
+            display: grid;
+            gap: 10px;
+            margin: 20px 0 8px;
+        }
+
+        .details p {
+            margin: 0;
+        }
+
+        .notes {
+            margin-top: 24px;
+            padding: 16px 18px;
+            border-left: 3px solid var(--accent);
+            background: rgba(154, 208, 255, 0.08);
+            border-radius: 8px;
+        }
+
+        .notes p {
+            margin: 0 0 10px;
+            color: #bfe7ff;
+            font-style: italic;
+        }
+
+        .notes p:last-child {
+            margin-bottom: 0;
+        }
+
+        .closing {
+            margin-top: 28px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.16);
+            color: #cfc8bc;
+            font-style: italic;
+        }
+
+        strong {
+            color: var(--accent-2);
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 16px;
+            }
+
+            main {
+                padding: 24px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Cześć, świecie!</h1>
-    <p>To moja pierwsza strona wystawiona na GitHubie.</p>
+    <main>
+        <h1>Prototyp Wilczej Machiny Oblężniczej — dzieło Profesora Sznaucera</h1>
+        <p class="intro">(fragment kroniki budowniczych, spisany dla potomnych)</p>
+
+        <p>
+            W czasach, gdy mury wrogich twierdz zdawały się nie do zdobycia, a serca rycerzy trawiła tęsknota za zwycięstwem, z pracowni starego majstra wyszło coś, czego świat jeszcze nie widział — <strong>Żelaznowilcze Chodziory</strong>, jak nazwał je sam ich twórca, Profesor Sznaucer, mistrz drewna, okuć i zapomnianych już dziś sekretów mechaniki.
+        </p>
+
+        <h2>Karta prototypu</h2>
+        <div class="details">
+            <p><strong>Nazwa robocza:</strong> Wilcza Machina Oblężnicza, Model I (linia "Straż Lasu")</p>
+            <p><strong>Konstruktor:</strong> Profesor Sznaucer, Warsztat Pod Sękatym Dębem</p>
+            <p><strong>Materiał główny:</strong> starodrzew dębowy, hartowany dymem i czasem, jak przystało na coś, co ma pamiętać więcej bitew niż niejeden rycerz</p>
+            <p><strong>Okucia:</strong> kute żelazo, ciemne jak wilcza sierść o północy, łączące pradawne kończyny konstrukcji w jedną, milczącą całość</p>
+            <p><strong>Napęd:</strong> wewnętrzny mechanizm korbowo-dźwigniowy, poruszany siłą ukrytych w cielsku maszyny kołowrotów — Profesor twierdził, że „serce Wilka bije żelaznym rytmem, a nie ludzkim tchnieniem”</p>
+            <p><strong>Pojemność:</strong> do 30 rycerzy w komorze transportowej, ukrytych w drewnianym cielsku niczym w brzuchu prawdziwej bestii</p>
+            <p><strong>Obsługa:</strong> 10 techników odpowiedzialnych za napęd i sterowanie</p>
+            <p><strong>Osłona:</strong> 5 żołnierzy przydzielonych do ochrony maszyny w marszu</p>
+            <p><strong>Zasięg operacyjny:</strong> do 200 metrów od linii wyjścia</p>
+            <p><strong>Wysokość:</strong> 6 metrów — tyle, by zajrzeć wrogowi prosto ponad blanki</p>
+        </div>
+
+        <div class="grid">
+            <img src="Pictures/60.jpg" alt="Zdjęcie 60">
+            <img src="Pictures/70.jpg" alt="Zdjęcie 70">
+            <img src="Pictures/80.jpg" alt="Zdjęcie 80">
+            <img src="Pictures/90.jpg" alt="Zdjęcie 90">
+            <img src="Pictures/100.jpg" alt="Zdjęcie 100">
+            <img src="Pictures/110.jpg" alt="Zdjęcie 110">
+        </div>
+
+        <h2>Uwagi własnoręczne Profesora Sznaucera</h2>
+        <div class="notes">
+            <p>„Trzy Wilki zbudowałem, nie jednego, bo samotny wilk to tylko legenda, a stado — to już armia.”</p>
+            <p>„Głowa musi patrzeć czujnie, uszy wyostrzone jak groty strzał — inaczej wróg pozna, że to tylko drewno, a nie prawdziwa bestia z Puszczy Zapomnianych Królestw.”</p>
+            <p>„Okucia kładłem tam, gdzie drewno najsłabsze — bo nawet legenda potrzebuje żelaznego kręgosłupa.”</p>
+            <p>„Niechaj nikt nie pyta, skąd czerpię natchnienie do takich konstrukcji. Wilk milczy, dopóki nie nadejdzie jego pora.”</p>
+        </div>
+
+        <p class="closing">
+            Trzy takie Wilki stanęły w rzędzie tego dnia, gdy słońce sączyło się przez szklany dach starej hali — jakby czekały tylko na rozkaz, by ruszyć w stronę murów, których jeszcze nikt nie zdobył.
+        </p>
+    </main>
 </body>
 </html>
