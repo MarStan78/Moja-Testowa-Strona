@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit *)",
+      "Bash(node -e ' *)",
+      "Bash(node --check /tmp/_script_check.js)",
+      "Bash(node --check \"C:/Users/marst/AppData/Local/Temp/claude/j--80-Moja-Testowa-Strona-Moja-Testowa-Strona/5ee3fc6a-c758-49e8-a753-5ad531aa721a/scratchpad/_script_check.js\")",
+      "Bash(start \"\" \"J:/90 Czytanie po angielsku/index.html\")",
+      "Bash(npx.cmd wrangler *)",
+      "Bash(node --test worker.test.js)"
+    ]
+  }
+}
